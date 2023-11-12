@@ -1,0 +1,16 @@
+impl_cowabunga_for_copy!(bool);
+impl_cowabunga_for_copy!(char);
+impl_cowabunga_for_copy!(f32);
+impl_cowabunga_for_copy!(f64);
+impl_cowabunga_for_copy!(usize);
+impl_cowabunga_for_copy!(u8);
+impl_cowabunga_for_copy!(u16);
+impl_cowabunga_for_copy!(u32);
+impl_cowabunga_for_copy!(u64);
+impl_cowabunga_for_copy!(u128);
+impl_cowabunga_for_copy!(isize);
+impl_cowabunga_for_copy!(i8);
+impl_cowabunga_for_copy!(i16);
+impl_cowabunga_for_copy!(i32);
+impl_cowabunga_for_copy!(i64);
+impl_cowabunga_for_copy!(i128);
