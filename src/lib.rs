@@ -1,14 +1,26 @@
+/// A type that contains cow values that can be converted between beeing owned or borrowed.
+///
+/// The term "cow" refers to the copy-on-write technique. The Rust standard library implements
+/// this with [`Cow`](std::borrow::Cow).
 pub trait Cowabunga {
+    /// A variant of `Self` that has only owned cow values.
     type Owned;
 
+    /// A variant of `Self` that has only borrowed cow values.
     type Borrowed<'b>
     where
         Self: 'b;
 
+    /// Returns an instance that contains only cow values borrowed from `self`.
     fn to_borrowed(&self) -> Self::Borrowed<'_>;
 
+    /// Returns an instance that contains only owned cow values by cloning values from `self`.
     fn to_owned(&self) -> Self::Owned;
 
+    /// Returns an instance that contains only owned cow values by cloning values from `self`
+    /// if necessary.
+    ///
+    /// Cow values that are already owned are preserved.
     fn into_owned(self) -> Self::Owned;
 }
 
